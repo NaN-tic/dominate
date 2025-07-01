@@ -4,8 +4,6 @@ This module consists of classes specific to HTML5-SVG Elements. In general this 
 - Elements that are deprecated
 '''
 from dominate.tags import html_tag
-from dominate.dom_tag import dom_tag
-import numbers
 
 
 __license__ = '''
@@ -48,9 +46,9 @@ _ATTR_EVENTS = set([
 ])
 
 DASHED_ATTRIBUTES = set([
-  'accent', 'alignment', 'arabic', 'baseline', 'cap', 'clip', 'color', 'dominant', 'enable', 'fill', 'flood', 
-  'font', 'glyph', 'horiz', 'image', 'letter', 'lighting', 'marker', 'overline', 'paint', 'panose', 'pointer', 
-  'rendering', 'shape', 'stop', 'strikethrough', 'stroke', 'text', 'underline', 'unicode', 'units', 'v', 'vector', 
+  'accent', 'alignment', 'arabic', 'baseline', 'cap', 'clip', 'color', 'dominant', 'enable', 'fill', 'flood',
+  'font', 'glyph', 'horiz', 'image', 'letter', 'lighting', 'marker', 'overline', 'paint', 'panose', 'pointer',
+  'rendering', 'shape', 'stop', 'strikethrough', 'stroke', 'text', 'underline', 'unicode', 'units', 'v', 'vector',
   'vert', 'word', 'writing', 'x'
 ])
 

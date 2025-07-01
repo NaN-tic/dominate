@@ -124,6 +124,7 @@ class container(dom_tag):
   '''
   Contains multiple elements, but does not add a level
   '''
+  __slots__ = ()
   is_inline = True
   def _render(self, sb, indent_level, indent_str, pretty, xhtml):
     inline = self._render_children(sb, indent_level, indent_str, pretty, xhtml)
@@ -137,6 +138,8 @@ class lazy(dom_tag):
   '''
   delays function execution until rendered
   '''
+  __slots__ = ()
+
   def __new__(_cls, *args, **kwargs):
     '''
     Need to reset this special method or else
@@ -163,6 +166,7 @@ class text(dom_tag):
   '''
   Just a string. Useful for inside context managers
   '''
+  __slots__ = ('escape', 'text')
   is_pretty = False
   is_inline = True
 

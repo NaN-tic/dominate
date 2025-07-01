@@ -80,6 +80,7 @@ def _get_thread_context():
   return tuple(context)
 
 class dom_tag(object):
+  __slots__ = ('attributes', 'children', 'parent', '_ctx')
   is_single = False  # Tag does not require matching end tag (ex. <hr/>)
   is_pretty = True   # Text inside the tag should be left as-is (ex. <pre>)
                      # otherwise, text will be escaped() and whitespace may be
@@ -121,8 +122,8 @@ class dom_tag(object):
     self.parent     = None
 
     # Does not insert newlines on all children if True (recursive attribute)
-    self.is_inline = kwargs.pop('__inline', self.is_inline)
-    self.is_pretty = kwargs.pop('__pretty', self.is_pretty)
+    #self.is_inline = kwargs.pop('__inline', self.is_inline)
+    #self.is_pretty = kwargs.pop('__pretty', self.is_pretty)
 
     #Add child elements
     if args:

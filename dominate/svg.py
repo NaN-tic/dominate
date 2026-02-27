@@ -88,7 +88,7 @@ class animateTransform(svg_tag):
   The animateTransform element animates a transformation attribute on its target element, thereby allowing
   animations to control translation, scaling, rotation, and/or skewing.
   '''
-  is_single = True
+  single = True
 
 
 class circle(svg_tag):

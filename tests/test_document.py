@@ -1,5 +1,5 @@
 from dominate import document
-from dominate.tags import *
+from dominate.tags import div, p, title
 
 
 def test_doc():

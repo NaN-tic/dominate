@@ -20,6 +20,8 @@ Public License along with Dominate.  If not, see
 '''
 from .dom_tag  import dom_tag, get_current, attr
 from .dom1core import dom1core
+# Re-export helpers from dom_tag for `from dominate.tags import *` compatibility.
+_ = (get_current, attr)
 
 try:
   basestring = basestring

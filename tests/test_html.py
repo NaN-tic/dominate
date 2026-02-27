@@ -1,6 +1,26 @@
 import pytest
 
-from dominate.tags import *
+from dominate.tags import (
+  attr,
+  body,
+  br,
+  comment,
+  div,
+  get_current,
+  h1,
+  head,
+  html,
+  i,
+  input_,
+  li,
+  p,
+  pre,
+  script,
+  span,
+  style,
+  sup,
+  ul,
+)
 from dominate.util import raw
 
 
@@ -24,7 +44,6 @@ def test_kwargs():
 
 
 def test_repr():
-  import re
   d = div()
   assert repr(d).startswith('<dominate.tags.div at ')
   assert repr(d).endswith(' 0 attributes, 0 children>')
@@ -201,7 +220,7 @@ def test_attributes():
   with pytest.raises(KeyError):
     del d['id']
   with pytest.raises(AttributeError):
-    x = d['id']
+    _ = d['id']
 
   with div(_foo='a', _='b') as d:
     assert d.attributes.keys() == {'foo', '_'}

@@ -1,6 +1,6 @@
 import pytest
 
-from dominate.tags import *
+from dominate.tags import div, span
 
 def test_dom():
   container = div()

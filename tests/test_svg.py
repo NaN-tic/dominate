@@ -1,8 +1,33 @@
 import sys
 
-import dominate.svg
-from dominate.tags import *
-from dominate.svg import *
+import dominate.svg as svg_module
+
+from dominate.svg import (
+  animate,
+  animateMotion,
+  animateTransform,
+  circle,
+  clipPath,
+  defs,
+  desc,
+  ellipse,
+  filter,
+  g,
+  line,
+  linearGradient,
+  marker,
+  mask,
+  mpath,
+  path,
+  pattern,
+  polygon,
+  polyline,
+  radialGradient,
+  rect,
+  stop,
+  svg,
+  use,
+)
 
 
 def base():
@@ -142,7 +167,7 @@ filter_names = ['feBlend', 'feColorMatrix', 'feComponentTransfer', 'feComposite'
 
 def test_filters():
   for name in filter_names:
-    attr = getattr(dominate.svg, name)
+    attr = getattr(svg_module, name)
     with filter() as f:
       attr()
     expected = '''<filter>\n  <{0}></{0}>\n</filter>'''.format(name)

@@ -1,5 +1,5 @@
 import dominate
-from dominate.tags import *
+from dominate.tags import div, h1
 from dominate import util
 
 

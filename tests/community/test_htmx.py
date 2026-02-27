@@ -1,6 +1,9 @@
 
 from dominate import tags
-import dominate.community.htmx
+from dominate.community import htmx
+
+# Import is intentional: importing this module patches tag attribute cleaning.
+_ = htmx
 
 def test_hx():
   d = tags.div(hx_foo=1)

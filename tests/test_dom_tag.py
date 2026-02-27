@@ -1,7 +1,7 @@
 import pytest
 import unittest.mock as mock
 
-from dominate.tags import *
+from dominate.tags import div
 
 
 def test___get_thread_context(monkeypatch):

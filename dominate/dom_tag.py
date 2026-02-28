@@ -45,6 +45,17 @@ try:
 except ImportError:
   greenlet = None
 
+# These prefixes will be converted to dashed html attributes
+DASHED_ATTRIBUTES = ['data_', 'aria_']
+_ORIGINAL_DASHED_ATTRIBUTES = DASHED_ATTRIBUTES[:]
+
+def add_dashed_attributes(*args):
+  DASHED_ATTRIBUTES.extend(args)
+
+def reset_dashed_attributes():
+  DASHED_ATTRIBUTES[:] = _ORIGINAL_DASHED_ATTRIBUTES[:]
+
+
 # We want dominate to work in async contexts - however, the problem is
 # when we bind a tag using "with", we set what is essentially a global variable.
 # If we are processing multiple documents at the same time, one context
@@ -481,7 +492,8 @@ class dom_tag(object):
       attribute = attribute[1:]
 
     # Workaround for dash
-    if attribute == 'http_equiv' or attribute.startswith(('data_', 'aria_')):
+    special_prefix = any(attribute.startswith(x) for x in DASHED_ATTRIBUTES)
+    if attribute == 'http_equiv' or special_prefix:
       attribute = attribute.replace('_', '-').lower()
 
     # Workaround for colon

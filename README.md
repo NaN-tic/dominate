@@ -168,7 +168,7 @@ print(
 <div aria-role="button"></div>
 ```
 
-If you using a 3rd party library like HTMX, Unpoly, or AlpineJS that uses dashed attributes, you will
+If you're using a 3rd party library like HTMX, Unpoly, or AlpineJS that uses dashed attributes, you will
 need to configure dominate accordingly:
 
 ```python
